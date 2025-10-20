@@ -47,5 +47,5 @@ Rotte in app.jsx
 
 ## SCELTE GRAFICHE
  - Layout basico con sfondo bianco
- - 
+ - Bottone riutilizzabile
 
