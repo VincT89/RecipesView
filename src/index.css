@@ -1,1 +1,8 @@
 @import "tailwindcss";
+
+@theme {
+  --color-button-500: oklch(0.8978 0.0262 141.76);
+  --color-buttonHover-800: oklch(0.5722 0.058 141.54);
+  --color-buttonTextHover-600: oklch(0.2178 0 0);
+
+}
