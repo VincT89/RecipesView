@@ -29,18 +29,20 @@ Rotte in app.jsx
 -- chi fara' la pagina di profilo si occupera' anche del protected routing --
 
 ## HOMEPAGE - VINCENZO + ARAFAT
-1. Layout pubblico = navbar + outlet(layout con react router dom) + footer - ARAFAT
+1. Layout pubblico = navbar + outlet(layout con react router dom) + footer - ARAFAT - https://cruip.com/demos/simple/
 2. Contenuto della home = header + sezioni - VINCENZO
 
 ## LOGIN - FEDERICA
-1. form di login (con chiamata API al link dummyjson - AUTHSLICE - https://dummyjson.com/docs/auth#auth-login)
+1. form di login (con chiamata API al link dummyjson - AUTHSLICE - https://dummyjson.com/docs/auth#auth-login) - https://cruip.com/demos/mosaic/
 
 ## DASHBOARD RICETTE - ALESSANDRA + ANTONIO + CLAUDIA + ALTIN
-1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes) - ALESSANDRA + ANTONIO
+1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes) - ALESSANDRA + ANTONIO - https://cruip.com/demos/mosaic/
 2. Ricerca ricette (a scelta se in un altra pagina o dinamica nella stessa) (sia lo slice per la tabella che lo slice per la ricerca) - CLAUDIA + ALTIN
 
 ## DASHBOARD PROFILO - EMANUELA
-1. Pagina profilo con form con le informazioni dell'utente (PROFILESLICE con chiamata API - https://dummyjson.com/docs/users#users-me - documentazione nella sidebar a sinistra)
+1. Pagina profilo con form con le informazioni dell'utente (PROFILESLICE con chiamata API - https://dummyjson.com/docs/users#users-me - documentazione nella sidebar a sinistra) - https://cruip.com/demos/mosaic/
+
+
 
 
 ## SCELTE GRAFICHE
