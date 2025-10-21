@@ -18,17 +18,18 @@ const Navbar = () => {
 		navigate("/");
 	};
 
+	// appoggio per gestire la navbar dinamica
 	const isLogged = user && accessToken;
 
 	return (
 		<div>
-			{/* Navbar */}
+		
 			<nav className="bg-navbar sticky z-20 w-full top-0 left-0 px-6 py-4 shadow-md">
 				<div className="max-w-screen-xl mx-auto flex justify-between items-center">
 					<Link to="/" className="text-3xl font-bold text-white">
 						Ricettario
 					</Link>
-
+						{/* Operatore ternario per la navbar dinamica */}
 					{isLogged ? (
 						<div className="flex items-center space-x-4">
 							<span className="text-white font-semibold">
@@ -64,7 +65,6 @@ const Navbar = () => {
 				</div>
 			</nav>
 
-			{/* Hero Section integrata */}
 			<section
 				className="relative w-full h-[40vh] bg-cover bg-center"
 				style={{ backgroundImage: `url(${image})` }}
