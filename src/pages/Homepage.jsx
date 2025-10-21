@@ -8,7 +8,7 @@ const HomePage = () => {
         <div className="max-w-screen-xl mx-auto px-6 text-center">
           <h2 className="text-4xl font-semibold text-gray-800 mb-8">Un mondo di sapori ti aspetta</h2>
           <p className="text-lg text-gray-600 mb-12">
-            Scopri, salva e personalizza ricette per ogni occasione. Da piatti veloci a dolci irresistibili, trova sempre l'ispirazione giusta per la tua cucina.
+            Scopri le migliori ricette per ogni occasione. Da piatti veloci a dolci irresistibili, trova sempre l'ispirazione giusta per la tua cucina.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="flex flex-col items-center">

@@ -34,20 +34,20 @@ const Footer = () => {
 
         {/* Social Media Links */}
         <div className="flex justify-center space-x-6 mb-6">
-          <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 text-xl">
+          <a href="#" className="text-gray-400 hover:text-blue-500 text-xl">
             <i className="fab fa-facebook-f"></i>
           </a>
-          <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-blue-500 text-xl">
+          <a href="#" className="text-gray-400 hover:text-blue-500 text-xl">
             <i className="fab fa-twitter"></i>
           </a>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-400 hover:text-pink-500 text-xl">
+          <a href="#" className="text-gray-400 hover:text-pink-500 text-xl">
             <i className="fab fa-instagram"></i>
           </a>
         </div>
 
         {/* Copyright */}
         <div className="text-center text-sm text-gray-400 w-full py-4 border-t border-gray-600">
-          <p>&copy; {new Date().getFullYear()} Ricettario. Tutti i diritti riservati.</p>
+          <p>&copy; {new Date().getFullYear()} Ricettario. Mia Tech - Classe 9.</p>
         </div>
       </div>
     </footer>
