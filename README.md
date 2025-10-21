@@ -37,7 +37,7 @@ Rotte in app.jsx
 
 ## DASHBOARD RICETTE - ALESSANDRA + ANTONIO + CLAUDIA + ALTIN
 1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes - sia lo slice per la tabella) - ALESSANDRA + ANTONIO - https://cruip.com/demos/mosaic/
-2. Ricerca ricette (un altra pagina) ( che lo slice per la ricerca) - CLAUDIA + ALTIN
+2. Ricerca ricette (un altra pagina) ( che lo slice per la ricerca ) - CLAUDIA + ALTIN
 
 ## DASHBOARD PROFILO - EMANUELA
 1. Pagina profilo con form con le informazioni dell'utente (PROFILESLICE con chiamata API - https://dummyjson.com/docs/users#users-me - documentazione nella sidebar a sinistra) - https://cruip.com/demos/mosaic/
