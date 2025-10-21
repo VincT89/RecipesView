@@ -38,9 +38,15 @@ const recipesSlice = createSlice({
     items: [],       // Qui salveremo l'array delle ricette
     status: "idle",  // idle: fetch non iniziato. - Stati del fetch: idle, loading, succeeded, failed
     error: null,     // Stato iniziale degli errori
+    searchTerm:"", // Altin -> aggiunto per salvare il testo digitato
   },
   reducers: {}, // Qui metteremmo azioni sincrone 
   // (es.: setFilter --> per filtrare le ricette in base ai tag)
+
+
+  // Questa funzione viene eseguita ogni volta che l’utente scrive nell’input
+    // Serve per aggiornare lo stato "searchTerm" con ciò che ha digitato
+  setSerach: (state, action) => { state.searchTerm = action.payload; }, // -> aggiorna searchTerm con il testo dell’utente
 
   extraReducers: (builder) => { /* extrareducer è una proprietà dello slice di redux Toolkit 
      che serve a definire azioni non incluse nel reducer, quindi asincrone come 
