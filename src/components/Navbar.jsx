@@ -3,7 +3,6 @@ import { useDispatch, useSelector } from "react-redux";
 // import { logout } from "../store/features/authSlice";
 import navbarCustom from "../hooks/useNavbarCustom";
 
-
 const Navbar = () => {
 	// Dati utente
 	const { user, accessToken } = useSelector((state) => state.auth);
@@ -17,26 +16,48 @@ const Navbar = () => {
 
 	const handleLogout = () => {
 		dispatch(logout());
-	}
+	};
 
-	const is
+	const isLoggedIn = !!accessToken;
+	const isLoginPage = location.pathname === "/login";
 
 	return (
 		<div>
 			{/* Navbar */}
 			<nav className="bg-navbar sticky z-20 w-full top-0 left-0 px-6 py-4 shadow-md">
 				<div className="max-w-screen-xl mx-auto flex justify-between items-center">
-		
 					<Link to="/" className="text-3xl font-bold text-white">
 						Ricettario
 					</Link>
-
-					<Link
-						to="/login"
-						className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
-					>
-						Login
-					</Link>
+					
+					{isLoggedIn && !isLoginPage ? (
+						<div className="flex items-center space-x-4">
+							<span className="text-white font-semibold">
+								Benvenuto, {user?.firstname}!
+							</span>
+							<Link
+								to="/dashboard/ricette"
+								className="text-white font-semibold hover:underline"
+							>
+								Le Ricette
+							</Link>
+							<Link
+								to="/dashboard/profile"
+								className="text-white font-semibold hover:underline"
+							>
+								Profilo
+							</Link>
+						</div>
+					) : (
+						!isLoggedIn && (
+							<Link
+								to="/login"
+								className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
+							>
+								Login
+							</Link>
+						)
+					)}
 				</div>
 			</nav>
 
