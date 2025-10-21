@@ -1,12 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { GiCookingPot } from 'react-icons/gi'; // Icona di cucina (puoi scegliere un'altra icona se preferisci)
+import { GiCookingPot } from 'react-icons/gi'; 
 
 const Footer = () => {
   return (
     <footer className="bg-footer text-white py-8 mt-12 w-full">
       <div className="max-w-screen-xl mx-auto px-6">
-        {/* Sezione Logo e Descrizione */}
+    
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
           <div className="flex flex-col items-center md:items-start">
             <Link to="/" className="text-3xl font-bold text-white">
@@ -17,7 +17,6 @@ const Footer = () => {
             </p>
           </div>
 
-          {/* Icona al posto dell'immagine */}
           <div className="mt-4 md:mt-0">
             <GiCookingPot className="text-9xl text-white" />
           </div>
