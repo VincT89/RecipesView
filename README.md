@@ -36,8 +36,8 @@ Rotte in app.jsx
 1. form di login (con chiamata API al link dummyjson - AUTHSLICE - https://dummyjson.com/docs/auth#auth-login) - https://cruip.com/demos/mosaic/
 
 ## DASHBOARD RICETTE - ALESSANDRA + ANTONIO + CLAUDIA + ALTIN
-1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes) - ALESSANDRA + ANTONIO - https://cruip.com/demos/mosaic/
-2. Ricerca ricette (a scelta se in un altra pagina o dinamica nella stessa) (sia lo slice per la tabella che lo slice per la ricerca) - CLAUDIA + ALTIN
+1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes - lo slice per la tabella ) - ALESSANDRA + ANTONIO - https://cruip.com/demos/mosaic/
+2. Ricerca ricette (in un altra pagina) (lo slice per la ricerca) - CLAUDIA + ALTIN
 
 ## DASHBOARD PROFILO - EMANUELA
 1. Pagina profilo con form con le informazioni dell'utente (PROFILESLICE con chiamata API - https://dummyjson.com/docs/users#users-me - documentazione nella sidebar a sinistra) - https://cruip.com/demos/mosaic/
