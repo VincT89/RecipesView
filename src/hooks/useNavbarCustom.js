@@ -20,7 +20,7 @@ const navbarCustom = () => {
 		case "/login":
 			return {
 				image: login,
-				title: "Accedi per cominciare a cucinare",
+				title: "Cominciare a cucinare!!",
 				paragraph:
 					"Entra nel tuo account per accedere alla vasta raccolta di ricette",
 			};
