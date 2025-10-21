@@ -4,7 +4,7 @@ import { GiCookingPot } from 'react-icons/gi';
 
 const Footer = () => {
   return (
-    <footer className="bg-footer text-white py-8 mt-12 w-full">
+    <footer className="bg-footer text-white py-8">
       <div className="max-w-screen-xl mx-auto px-6">
     
         <div className="flex flex-col md:flex-row justify-between items-center mb-8">
