@@ -7,7 +7,6 @@ const Navbar = () => {
 	// Dati utente
 	const { user, accessToken } = useSelector((state) => state.auth);
 
-
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
 
@@ -19,6 +18,7 @@ const Navbar = () => {
 		navigate("/");
 	};
 
+	const isLogged = user && accessToken;
 
 	return (
 		<div>
@@ -29,7 +29,7 @@ const Navbar = () => {
 						Ricettario
 					</Link>
 
-					{user && !accessToken ? (
+					{isLogged ? (
 						<div className="flex items-center space-x-4">
 							<span className="text-white font-semibold">
 								Benvenuto, {user?.username}!
@@ -54,14 +54,12 @@ const Navbar = () => {
 							</button>
 						</div>
 					) : (
-						!user && (
-							<Link
-								to="/login"
-								className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
-							>
-								Login
-							</Link>
-						)
+						<Link
+							to="/login"
+							className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
+						>
+							Login
+						</Link>
 					)}
 				</div>
 			</nav>
