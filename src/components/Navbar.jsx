@@ -1,11 +1,25 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+// import { logout } from "../store/features/authSlice";
 import navbarCustom from "../hooks/useNavbarCustom";
 
 
 const Navbar = () => {
+	// Dati utente
+	const { user, accessToken } = useSelector((state) => state.auth);
+	// Pagina in cui mi trovo
+	const location = useLocation();
+
+	const dispatch = useDispatch();
 
 	// ottiene tutto dall'hook personalizzato
 	const { image, title, paragraph } = navbarCustom();
+
+	const handleLogout = () => {
+		dispatch(logout());
+	}
+
+	const is
 
 	return (
 		<div>
