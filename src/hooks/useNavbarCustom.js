@@ -31,7 +31,7 @@ const navbarCustom = () => {
 				paragraph:
 					"Scopri una vasta collezione di piatti per ogni occasione. Ogni ricetta è pensata per soddisfare ogni gusto.",
 			};
-		case "/dashboard/profile":
+		case "/dashboardProfilo":
 			return {
 				image: dashboardProfile,
 				title: "Benvenuto nel Tuo Profilo",
