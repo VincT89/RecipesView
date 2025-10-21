@@ -1,4 +1,4 @@
-import { Link, useNavigate, useLocation } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/features/authSlice";
 import navbarCustom from "../hooks/useNavbarCustom";
@@ -6,8 +6,7 @@ import navbarCustom from "../hooks/useNavbarCustom";
 const Navbar = () => {
 	// Dati utente
 	const { user, accessToken } = useSelector((state) => state.auth);
-	// Pagina in cui mi trovo
-	const location = useLocation();
+
 
 	const dispatch = useDispatch();
 	const navigate = useNavigate();
@@ -20,8 +19,6 @@ const Navbar = () => {
 		navigate("/");
 	};
 
-	const isLoggedIn = !!accessToken;
-	const isLoginPage = location.pathname === "/login";
 
 	return (
 		<div>
@@ -32,7 +29,7 @@ const Navbar = () => {
 						Ricettario
 					</Link>
 
-					{isLoggedIn && !isLoginPage ? (
+					{user && !accessToken ? (
 						<div className="flex items-center space-x-4">
 							<span className="text-white font-semibold">
 								Benvenuto, {user?.username}!
@@ -51,13 +48,13 @@ const Navbar = () => {
 							</Link>
 							<button
 								onClick={handleLogout}
-								className="px-4 py-2 bg-red-500 text-white rounded-full font-bold hover:bg-red-600"
+								className="px-4 py-2 bg-red-400 text-white rounded-full font-bold hover:bg-red-600"
 							>
 								Logout
 							</button>
 						</div>
 					) : (
-						!isLoggedIn && (
+						!user && (
 							<Link
 								to="/login"
 								className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
@@ -71,7 +68,7 @@ const Navbar = () => {
 
 			{/* Hero Section integrata */}
 			<section
-				className="relative w-full h-[50vh] bg-cover bg-center"
+				className="relative w-full h-[40vh] bg-cover bg-center"
 				style={{ backgroundImage: `url(${image})` }}
 			>
 				<div className="relative z-10 text-center text-white flex items-center justify-center h-full px-6">
