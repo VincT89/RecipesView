@@ -1,30 +1,21 @@
 import React from "react";
 import Button from "./Button";
 
-export const Card = ({image, name, description}) => {
-	return (
-		<div className="max-w-sm w-full lg:max-w-full lg:flex">
-			<div
-				className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-				title="Woman holding a mug"
-			>
-				<img src={image} alt="" />
-			</div>
-			<div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-				<div className="mb-8">
-					<div className="text-gray-900 font-bold text-xl mb-2">
-						{name}
-					</div>
-					<p className="text-gray-700 text-base">
-						{description}
-					</p>
-				</div>
-				<div className="flex items-center">
-					<div className="text-sm">
-						<Button></Button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+export const Card = ({ image, name, description }) => {
+  return (
+    <article className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
+      <div className="relative aspect-[4/3] overflow-hidden">
+        <img
+          src={image}
+          alt={name}
+          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+        />
+      </div>
+      <div className="p-4 text-center flex flex-col items-center">
+        <h3 className="text-base font-semibold mb-1">{name}</h3>
+        <p className="text-sm text-gray-600 mb-3">{description}</p>
+        <Button className="w-40 px-3 py-1.5 text-sm rounded-lg">Dettagli</Button>
+      </div>
+    </article>
+  );
 };
