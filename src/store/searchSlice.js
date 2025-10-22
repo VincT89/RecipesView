@@ -58,4 +58,5 @@ const SearchSlice = () => {
 };
 
 // Esportiamo il componente per poterlo usare in altre parti dell’app (es. in RecipesPage)
-export default SearchSlice;
+export const { setSearchTerm } = recipesSlice.actions;
+export default recipesSlice.reducer;
