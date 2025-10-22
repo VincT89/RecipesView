@@ -6,7 +6,7 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 // - setSearchTerm: serve per salvare ciò che l’utente digita nello store Redux
 // - fetchRecipes: serve per eseguire la chiamata API e prendere le ricette filtrate
 import { setSearchTerm, fetchRecipes } from "./store/recipesSlice";
-
+ 
 
 
 //   HO CREATO UNA FUNZIONE CHIAMATA "fetchRecipesSearchInput" CHE UTILIZZA 
