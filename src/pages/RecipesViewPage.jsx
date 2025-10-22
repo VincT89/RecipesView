@@ -12,8 +12,8 @@ const RecipesViewPage = () => {
     },
     {
       id: 2,
-      name: "Pasta Carbonara",
-      description: "Con uova, pancetta e pepe",
+      name: "Wok di verdure",
+      description: "verdure miste",
       image: "https://cdn.dummyjson.com/recipe-images/2.webp"
     },
     {
@@ -24,8 +24,8 @@ const RecipesViewPage = () => {
     },
     {
       id: 3,
-      name: "Pasta Carbonara",
-      description: "Con uova, pancetta e pepe",
+      name: "Wok di verdure",
+      description: "verdure miste",
       image: "https://cdn.dummyjson.com/recipe-images/2.webp"
     },
     {
@@ -36,8 +36,8 @@ const RecipesViewPage = () => {
     },
     {
       id: 5,
-      name: "Pasta Carbonara",
-      description: "Con uova, pancetta e pepe",
+      name: "Wok di verdure",
+      description: "verdure miste",
       image: "https://cdn.dummyjson.com/recipe-images/2.webp"
     },
     {
@@ -48,8 +48,8 @@ const RecipesViewPage = () => {
     },
     {
       id: 7,
-      name: "Pasta Carbonara",
-      description: "Con uova, pancetta e pepe",
+      name: "Wok di verdure",
+      description: "verdure miste",
       image: "https://cdn.dummyjson.com/recipe-images/2.webp"
     },
     {
@@ -60,8 +60,8 @@ const RecipesViewPage = () => {
     },
     {
       id: 9,
-      name: "Pasta Carbonara",
-      description: "Con uova, pancetta e pepe",
+      name: "Wok di verdure",
+      description: "verdure miste",
       image: "https://cdn.dummyjson.com/recipe-images/2.webp"
     },
     {
@@ -74,7 +74,7 @@ const RecipesViewPage = () => {
 
   return (
     <section className="max-w-6xl mx-auto px-4 py-10">
-      <h1 className="text-3xl font-bold tracking-tight mb-8">RECIPES</h1>
+      <h1 className="text-3xl font-semibold tracking-tight mb-6">Recipes</h1>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
         {fakeRecipes.map((recipe) => (
