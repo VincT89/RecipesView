@@ -1,129 +1,78 @@
-// Importa React e gli hook necessari
-import React, { useEffect, useState } from 'react';
-
-// Importa gli hook di Redux per interagire con lo store
-import { useDispatch, useSelector } from 'react-redux';
-
-// Importa l'action creator per ottenere le ricette
-import { fetchRecipes } from '../store/features/recipesSlice';
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { fetchRecipes } from "../store/features/recipesSlice";
+import { Link } from "react-router-dom";
+import Card from "../components/Card";
 
 const RecipesList = () => {
-  // Hook Redux per inviare azioni
-  const dispatch = useDispatch();
+	const dispatch = useDispatch();
+	const { items, status, error } = useSelector((state) => state.recipes);
 
-  // Estrae lo stato delle ricette dallo store
-  const { items, status, error } = useSelector((state) => state.recipes);
+	const [limit, setLimit] = useState(12);
+	const [expandedId, setExpandedId] = useState(null);
 
-  // Stato locale per gestire il numero di ricette da caricare
-  const [limit, setLimit] = useState(12);
+	useEffect(() => {
+		dispatch(fetchRecipes(limit));
+	}, [limit, dispatch]);
 
-  // Stato locale per gestire quale card è espansa
-  const [expandedId, setExpandedId] = useState(null);
+	const toggleExpand = (id) => {
+		setExpandedId(expandedId === id ? null : id);
+	};
 
-  // Effetto che si attiva ogni volta che cambia il limite
-  useEffect(() => {
-    dispatch(fetchRecipes(limit));
-  }, [limit, dispatch]);
+	if (status === "loading")
+		return <p style={{ padding: "2rem" }}>Caricamento ricette...</p>;
+	if (status === "failed")
+		return <p style={{ padding: "2rem", color: "red" }}>Errore: {error}</p>;
 
-  // Gestisce l'espansione della card per mostrare gli ingredienti
-  const toggleExpand = (id) => {
-    setExpandedId(expandedId === id ? null : id);
-  };
+	return (
+		<>
+			{/* Input per modificare il numero di ricette */}
+			<div className="flex items-center justify-between">
+				<div style={{ padding: "1rem" }}>
+					<label htmlFor="limit">Numero di ricette: </label>
+					<input
+						id="limit"
+						type="number"
+						value={limit}
+						min={1}
+						max={50}
+						onChange={(e) => setLimit(Number(e.target.value))}
+						className="ml-2 px-2 py-1 rounded outline-none"
+						style={{
+							border: "2px solid var(--color-button-500)",
+							borderRadius: "8px",
+						}}
+					/>
+				</div>
+				<Link
+					to="/searchRecipes"
+					className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
+				>
+					Cerca Ricette
+				</Link>
+			</div>
 
-  // Mostra messaggio di caricamento
-  if (status === 'loading') return <p>Caricamento ricette...</p>;
-
-  // Mostra eventuale errore
-  if (status === 'failed') return <p>Errore: {error}</p>;
-
-  return (
-    <>
-      {/* Input per modificare il numero di ricette da caricare */}
-      <div style={{ padding: '1rem' }}>
-        <label htmlFor="limit">Numero di ricette: </label>
-        <input
-          id="limit"
-          type="number"
-          value={limit}
-          min={1}
-          max={50}
-          onChange={(e) => setLimit(Number(e.target.value))}
-          style={{ marginLeft: '0.5rem', padding: '0.3rem' }}
-        />
-      </div>
-
-      {/* Griglia delle ricette */}
-      <div
-        style={{
-          display: 'grid',
-          gap: '1.5rem',
-          gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-          padding: '2rem'
-        }}
-      >
-        {items.map((recipe) => (
-          <div
-            key={recipe.id}
-            style={{
-              border: '1px solid #ddd',
-              borderRadius: '10px',
-              padding: '1rem',
-              backgroundColor: '#fff',
-              boxShadow: '0 2px 6px rgba(0,0,0,0.1)'
-            }}
-          >
-            {/* Immagine */}
-            <img
-              src={recipe.image}
-              alt={recipe.name}
-              style={{
-                width: '100%',
-                height: 'auto',
-                borderRadius: '8px',
-                marginBottom: '0.5rem'
-              }}
-            />
-
-            {/* Titolo */}
-            <h3 style={{ marginBottom: '0.5rem' }}>{recipe.name}</h3>
-
-            {/* Tipo di cucina */}
-            <p>
-              <strong>Cucina:</strong> {recipe.cuisine}
-            </p>
-
-            {/* Bottone per mostrare/nascondere ingredienti */}
-            <button
-              onClick={() => toggleExpand(recipe.id)}
-              style={{
-                marginTop: '0.5rem',
-                padding: '0.5rem 1rem',
-                backgroundColor: '#007bff',
-                color: '#fff',
-                border: 'none',
-                borderRadius: '5px',
-                cursor: 'pointer'
-              }}
-            >
-              {expandedId === recipe.id ? 'Nascondi ingredienti' : 'Mostra ingredienti'}
-            </button>
-
-            {/* Lista ingredienti */}
-            {expandedId === recipe.id && (
-              <div style={{ marginTop: '1rem' }}>
-                <h4>Ingredienti:</h4>
-                <ul style={{ paddingLeft: '1.2rem' }}>
-                  {recipe.ingredients.map((ingredient, index) => (
-                    <li key={index}>{ingredient}</li>
-                  ))}
-                </ul>
-              </div>
-            )}
-          </div>
-        ))}
-      </div>
-    </>
-  );
+			{/* Griglia delle card */}
+			<div
+				style={{
+					display: "grid",
+					gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
+					gap: "2rem",
+					padding: "2rem",
+					backgroundColor: "#f9f9f9",
+				}}
+			>
+				{items.map((recipe) => (
+					<Card
+						key={recipe.id}
+						recipe={recipe}
+						isExpanded={expandedId === recipe.id}
+						onToggle={toggleExpand}
+					/>
+				))}
+			</div>
+		</>
+	);
 };
 
 export default RecipesList;

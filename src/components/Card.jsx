@@ -1,30 +1,44 @@
-import React from "react";
-import Button from "./Button";
+import React from 'react';
 
-export const Card = ({image, name, description}) => {
-	return (
-		<div className="max-w-sm w-full lg:max-w-full lg:flex">
-			<div
-				className="h-48 lg:h-auto lg:w-48 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden"
-				title="Woman holding a mug"
-			>
-				<img src={image} alt="" />
-			</div>
-			<div className="border-r border-b border-l border-gray-400 lg:border-l-0 lg:border-t lg:border-gray-400 bg-white rounded-b lg:rounded-b-none lg:rounded-r p-4 flex flex-col justify-between leading-normal">
-				<div className="mb-8">
-					<div className="text-gray-900 font-bold text-xl mb-2">
-						{name}
-					</div>
-					<p className="text-gray-700 text-base">
-						{description}
-					</p>
-				</div>
-				<div className="flex items-center">
-					<div className="text-sm">
-						<Button></Button>
-					</div>
-				</div>
-			</div>
-		</div>
-	);
+
+const Card = ({ recipe, isExpanded, onToggle }) => {
+  return (
+    <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+      <img
+        src={recipe.image}
+        alt={recipe.name}
+        className="w-full h-[200px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+      />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold">{recipe.name}</h3>
+        <p className="mt-1"><strong>Cucina:</strong> {recipe.cuisine}</p>
+        <button
+          onClick={() => onToggle(recipe.id)}
+          className="mt-2 px-4 py-2 rounded text-white border-none cursor-pointer"
+          style={{
+            backgroundColor: 'var(--color-button-500)'
+          }}
+          onMouseOver={e => {
+            e.currentTarget.style.backgroundColor = 'var(--color-buttonHover-800)';
+            e.currentTarget.style.color = 'var(--color-buttonTextHover-600)';
+          }}
+          onMouseOut={e => {
+            e.currentTarget.style.backgroundColor = 'var(--color-button-500)';
+            e.currentTarget.style.color = 'white';
+          }}
+        >
+          {isExpanded ? 'Nascondi ingredienti' : 'Mostra ingredienti'}
+        </button>
+        {isExpanded && (
+          <ul className="mt-4 pl-5 list-disc">
+            {recipe.ingredients.map((ing, i) => (
+              <li key={i}>{ing}</li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
 };
+
+export default Card;

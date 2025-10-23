@@ -37,6 +37,12 @@ const navbarCustom = () => {
 				title: "Benvenuto nel Tuo Profilo",
 				paragraph: "Qui puoi gestire le tue informazioni.",
 			};
+		case "/searchRecipes":
+			return {
+				image: dashboardRicette,
+				title: "Cerca Ricette",
+				paragraph: "Trova le ricette che meglio si adattano ai tuoi gusti.",
+			};
 		default:
 			return {
 				image: heroImage,

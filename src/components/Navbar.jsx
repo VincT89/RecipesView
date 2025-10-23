@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/features/authSlice";
 import navbarCustom from "../hooks/useNavbarCustom";
+import { resetRecipes } from "../store/features/recipesSlice";
 
 const Navbar = () => {
 	// Dati utente
@@ -15,6 +16,7 @@ const Navbar = () => {
 
 	const handleLogout = () => {
 		dispatch(logout());
+		dispatch(resetRecipes());
 		navigate("/");
 	};
 
