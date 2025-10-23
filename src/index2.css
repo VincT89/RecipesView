@@ -1,0 +1,15 @@
+@import "tailwindcss";
+
+:root {
+  --color-button-500: oklch(0.8978 0.0262 141.76);
+  --color-buttonHover-800: oklch(0.5722 0.058 141.54);
+  --color-buttonTextHover-600: oklch(0.2178 0 0);
+  --color-title: oklch(0.5722 0.058 141.54);
+}
+
+@font-face {
+  font-family: 'CreamCakeBold';
+  src: url('./assets/fonts/CreamCakeBold.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
