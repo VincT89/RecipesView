@@ -36,8 +36,8 @@ Rotte in app.jsx
 1. form di login (con chiamata API al link dummyjson - AUTHSLICE - https://dummyjson.com/docs/auth#auth-login) - https://cruip.com/demos/mosaic/
 
 ## DASHBOARD RICETTE - ALESSANDRA + ANTONIO + CLAUDIA + ALTIN
-1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes) - ALESSANDRA + ANTONIO - https://cruip.com/demos/mosaic/
-2. Ricerca ricette (a scelta se in un altra pagina o dinamica nella stessa) (sia lo slice per la tabella che lo slice per la ricerca) - CLAUDIA + ALTIN
+1. Layout dashboard + tabella con impaginazione ricette (documentazione al link - https://dummyjson.com/docs/recipes - sia lo slice per la tabella) - ALESSANDRA + ANTONIO - https://cruip.com/demos/mosaic/
+2. Ricerca ricette (un altra pagina) ( che lo slice per la ricerca ) - CLAUDIA + ALTIN
 
 ## DASHBOARD PROFILO - EMANUELA
 1. Pagina profilo con form con le informazioni dell'utente (PROFILESLICE con chiamata API - https://dummyjson.com/docs/users#users-me - documentazione nella sidebar a sinistra) - https://cruip.com/demos/mosaic/
@@ -46,6 +46,16 @@ Rotte in app.jsx
 
 
 ## SCELTE GRAFICHE
+
+ TEMPLATE HOMEPAGE DI RIFERIMENTO   https://nicepage.com/it/html-templates/preview/servizio-di-alimentazione-e-nutrizione-6456619?device=desktop
+ TEMPLATE LOGIN https://nicepage.com/it/html-templates/preview/contattaci-con-limmagine-6323738?device=desktop
+ TEMPLATE DASHBOARD RICETTE  https://nicepage.com/it/html-templates/preview/servizio-di-alimentazione-e-nutrizione-6456619?device=desktop
+ TEMPLATE DASHBOARD PROFILO https://nicepage.com/it/ht/6456624/per-favore-contattaci-modello-html
+
  - Layout basico con sfondo bianco
  - Bottone riutilizzabile
+
+ - Colore NavBar e Bottoni  #658161 - Verdone scuro
+ - Colore background (main o section) #d4e2d2 - Verdino chiaro
+ - Colore Footer #1a1a1a - #333333 - Mix di nero scuro e grigio per il copyright
 
