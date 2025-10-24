@@ -15,10 +15,10 @@ const SearchInput = () => {
     const dispatch = useDispatch(); // serve per aggiornare lo store: searchTerm = "mozzarella"
 
     // Leggiamo il valore attuale del campo di ricerca dallo store Redux
-    const searchText = useSelector((state) => state.search.searchTerm) || "";
+    const searchText = useSelector((state) => state.searchInput.searchTerm) || "";
 
     // Recuperiamo le ricette filtrate dallo store Redux
-    const filteredRecipes = useSelector((state) => state.search.results);
+    const filteredRecipes = useSelector((state) => state.searchInput.results);
 
     // Funzione che si attiva ogni volta che l’utente digita qualcosa nell’input
     const handleInput = (event) => {
