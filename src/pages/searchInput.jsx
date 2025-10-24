@@ -6,12 +6,16 @@ import { useDispatch, useSelector } from "react-redux";
 // 2. fetchRecipesBySearch --> thunk per recuperare le ricette filtrate dalla API
 import { setSearchTerm, fetchRecipesBySearch } from "../store/searchSlice";
 
+// --> visto che importo da store non e meglio importare "../store/recipesSlice" anzichè  "../store/searchSlice"?
+//import { setSearchTerm, fetchRecipesBySearch } from "../store/recipesSlice";  
+
+
 const SearchInput = () => {
     // Creiamo la funzione dispatch per inviare azioni o thunk allo store Redux
     const dispatch = useDispatch(); // serve per aggiornare lo store: searchTerm = "mozzarella"
 
     // Leggiamo il valore attuale del campo di ricerca dallo store Redux
-    const searchText = useSelector((state) => state.search.searchTerm);
+    const searchText = useSelector((state) => state.search.searchTerm) || "";
 
     // Recuperiamo le ricette filtrate dallo store Redux
     const filteredRecipes = useSelector((state) => state.search.results);
@@ -29,7 +33,7 @@ const SearchInput = () => {
     };
 
     return (
-        <>
+        <div>
             {/* Input per la ricerca */}
             <input
                 type="text"                  // Input di tipo testo
@@ -40,25 +44,25 @@ const SearchInput = () => {
             />
 
             {/* Mostriamo le ricette filtrate sotto l'input */}
-            {filteredRecipes && filteredRecipes.length > 0 ? ( // Controlliamo che filteredRecipes esista e abbia elementi
-                filteredRecipes.map((recipe) => ( // Iteriamo sulle ricette filtrate
-                    <div key={recipe.id} className="max-w-sm w-full lg:max-w-full lg:flex mb-4 border rounded-lg overflow-hidden">
-                        <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden">
-                            <img src={recipe.image} alt={recipe.name} className="w-full h-full object-cover" />
-                        </div>
-                        <div className="p-4 flex flex-col justify-between">
-                            <div className="mb-4">
-                                <div className="text-gray-900 font-bold text-xl mb-2">{recipe.name}</div>
-                                <p className="text-gray-700 text-base">{recipe.description}</p>
-                            </div>
+            {filteredRecipes.length > 0 ? (filteredRecipes.map((recipe) => (
+                <div key={recipe.id || recipe.name} className="max-w-sm w-full lg:max-w-full lg:flex mb-4 border rounded-lg overflow-hidden">
+
+                    <div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden">
+                        <img src={recipe.image} alt={recipe.name} className="w-full h-full object-cover" />
+                    </div>
+                    <div className="p-4 flex flex-col justify-between">
+                        <div className="mb-4">
+                            <div className="text-gray-900 font-bold text-xl mb-2">{recipe.name}</div>
+                            <p className="text-gray-700 text-base">{recipe.description}</p>
                         </div>
                     </div>
-                ))
+                </div>
+            ))
             ) : (
                 // Se non ci sono ricette filtrate mostriamo questo messaggio
                 <p>Nessuna ricetta trovata</p>
             )}
-        </>
+        </div>
     );
 };
 

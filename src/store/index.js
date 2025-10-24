@@ -3,7 +3,7 @@ import searchInputReducer from '../store/searchSlice';
 
 const store = configureStore({
   reducer: {
-    searchInput: searchInputReducer,
+    SearchInput: searchInputReducer,
   },
 });
 

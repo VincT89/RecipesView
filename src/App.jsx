@@ -1,7 +1,8 @@
 import { Routes, Route } from "react-router-dom";
 import Button from "./components/Button";
 import { Card } from "./components/Card";
-import SearchInput from "./pages/searchInput";
+import SearchInput from "./pages/SearchInput"; 
+
 
 function App() {
 
@@ -11,9 +12,9 @@ function App() {
       {/* <Route path="/login" element={<LoginPage />} />
         <Route path="/dashboardRicette" element={<RecipesViewPage />} />
         <Route path="/dashboardProfilo" element={<ProfilePage />} /> */}
-      <Route path="/searchInput" element={<SearchInput />} />
+      <Route path="/SearchInput" element={<SearchInput />} />
     </Routes>
   )
 }
 
-export default App
+export default App;
