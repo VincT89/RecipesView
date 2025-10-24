@@ -1,9 +1,10 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
+
 export const fetchRecipes = createAsyncThunk(
   'recipes/fetchRecipes',
-  async (limit = 10) => {
-    const response = await fetch(`https://dummyjson.com/recipes?limit=${limit}`);
+  async () => {
+    const response = await fetch(`https://dummyjson.com/recipes`);
 
     if (!response.ok) {
       throw new Error('Errore nel recupero delle ricette');
