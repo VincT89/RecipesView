@@ -27,8 +27,8 @@ const RecipesList = () => {
 	return (
 		<>
 			{/* Input per modificare il numero di ricette */}
-			<div className="flex items-center justify-between">
-				<div style={{ padding: "1rem" }}>
+			<div className="flex items-center justify-between p-4">
+				<div>
 					<label htmlFor="limit">Numero di ricette: </label>
 					<input
 						id="limit"
@@ -44,6 +44,7 @@ const RecipesList = () => {
 						}}
 					/>
 				</div>
+
 				<Link
 					to="/searchRecipes"
 					className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"

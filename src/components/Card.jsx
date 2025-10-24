@@ -14,7 +14,7 @@ const Card = ({ recipe, isExpanded, onToggle }) => {
         <p className="mt-1"><strong>Cucina:</strong> {recipe.cuisine}</p>
         <button
           onClick={() => onToggle(recipe.id)}
-          className="mt-2 px-4 py-2 rounded text-white border-none cursor-pointer"
+          className="mt-2 px-4 py-2 rounded text-white border-none cursor-pointer font-bold "
           style={{
             backgroundColor: 'var(--color-button-500)'
           }}

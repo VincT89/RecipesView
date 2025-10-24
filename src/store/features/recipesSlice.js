@@ -23,8 +23,8 @@ const recipesSlice = createSlice({
     status: 'idle',
     error: null,
   },
-  reducers: {
-    resetRecipes(state) {
+  reducers: { 
+    resetRecipes: (state) => {
       state.items = [];
       state.status = 'idle';
       state.error = null;
