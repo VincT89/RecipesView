@@ -4,10 +4,7 @@ import { useDispatch, useSelector } from "react-redux";
 // Importiamo dallo slice searchSlice:
 // 1. setSearchTerm --> azione per aggiornare il testo della ricerca nello store
 // 2. fetchRecipesBySearch --> thunk per recuperare le ricette filtrate dalla API
-import { setSearchTerm, fetchRecipesBySearch } from "../store/searchSlice";
-
-// --> visto che importo da store non e meglio importare "../store/recipesSlice" anzichè  "../store/searchSlice"?
-//import { setSearchTerm, fetchRecipesBySearch } from "../store/recipesSlice";  
+import { setSearchTerm, fetchRecipesBySearch } from "../store/searchSlice"; 
 
 
 const SearchInput = () => {

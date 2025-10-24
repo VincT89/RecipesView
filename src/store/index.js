@@ -1,7 +1,7 @@
-import { configureStore } from '@reduxjs/toolkit';
+import { configureStore } from '@reduxjs/toolkit'; 
 import searchInputReducer from '../store/searchSlice';
 
-const store = configureStore({
+const store = configureStore({ // configuriamo lo store Redux
   reducer: {
     searchInput: searchInputReducer,
   },
