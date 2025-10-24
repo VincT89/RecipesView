@@ -30,7 +30,7 @@ const RecipesList = () => {
 	if (status === "failed")
 		return <p style={{ padding: "2rem", color: "red" }}>Errore: {error}</p>;
 
-	// Crea il slice dell'array con il limite e il punto di partenza
+	// Crea lo slice dell'array con il limite e il punto di partenza
 	const arraySlice = items.slice(start, start + limit);
 
 	// Funzione per andare avanti (incrementare start)
