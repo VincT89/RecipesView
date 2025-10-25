@@ -23,6 +23,13 @@ const Navbar = () => {
 	// appoggio per gestire la navbar dinamica
 	const isLogged = user && accessToken;
 
+	// Funzione per determinare il messaggio di benvenuto in base al genere
+  const welcomeMessage = user?.gender === "male" 
+    ? `Benvenuto, ${user?.username}!`
+    : user?.gender === "female" 
+    ? `Benvenuta, ${user?.username}!`
+    : `Benvenuto, ${user?.username}!`; // caso generico, nel caso non ci fosse il dato sul genere
+
 	return (
 		<div>
 		
@@ -35,7 +42,7 @@ const Navbar = () => {
 					{isLogged ? (
 						<div className="flex items-center space-x-4">
 							<span className="text-white font-semibold">
-								Benvenuto, {user?.username}!
+								{welcomeMessage}
 							</span>
 							<Link
 								to="/dashboard/ricette"
@@ -44,7 +51,7 @@ const Navbar = () => {
 								Le Ricette
 							</Link>
 							<Link
-								to="/dashboardProfilo"
+								to="/dashboard/profilo"
 								className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
 							>
 								Profilo

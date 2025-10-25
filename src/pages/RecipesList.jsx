@@ -12,7 +12,7 @@ const RecipesList = () => {
 	const dispatch = useDispatch();
 	const { items, status, error } = useSelector((state) => state.recipes);
 
-	const [limit, setLimit] = useState(10); // Numero di ricette per pagina 
+	const [limit] = useState(10); // Numero di ricette per pagina 
 	const [start, setStart] = useState(0); // Indice di partenza per slice
 	const [expandedId, setExpandedId] = useState(null);
 
@@ -51,12 +51,12 @@ const RecipesList = () => {
 
 	return (
 		<>
-			<div className="flex items-center justify-between p-4">
+			<div className="flex items-center justify-between p-2">
 				<span className="p-4 font-bold">
-					Pagina: {start / limit + 1} {/* Calcola il numero di pagina */}
+					Pagina: {start / limit + 1} di {Math.ceil(items.length / limit)} {/* Calcola il numero di pagina e il totale tramite ceil che arrotonda per eccesso */}
 				</span>
 				<Link
-					to="/searchRecipes"
+					to="/searchInput"
 					className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
 				>
 					Cerca Ricette
@@ -69,7 +69,7 @@ const RecipesList = () => {
 					display: "grid",
 					gridTemplateColumns: "repeat(auto-fill, minmax(300px, 1fr))",
 					gap: "2rem",
-					padding: "2rem",
+					padding: "1rem",
 					backgroundColor: "#f9f9f9",
 				}}
 			>
@@ -84,7 +84,7 @@ const RecipesList = () => {
 			</div>
 
 			{/* Paginazione */}
-			<div className="flex justify-center items-center mt-4">
+			<div className="flex justify-center items-center mt-3">
 				<Button
 					onClick={vaiIndietro}
 					disabled={start === 0} // Disabilita il pulsante se siamo alla prima pagina
