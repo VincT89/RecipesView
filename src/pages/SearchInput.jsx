@@ -40,7 +40,8 @@ const SearchInput = () => {
 				value={searchText} // Valore controllato dallo store Redux
 				onChange={handleInput} // Chiama la funzione handleInput ad ogni cambiamento
 				placeholder="Cerca una ricetta..." // Testo mostrato quando l'input è vuoto
-				className="border rounded-md p-2 w-full" // Styling con Tailwind CSS: bordo, angoli arrotondati, padding, larghezza piena
+				// Styling con Tailwind CSS: bordo, angoli arrotondati, padding, larghezza piena
+				className="w-full rounded-xl bg-gray-100 px-4 py-2 text-gray-700 shadow-inner focus:shadow-md focus:shadow-blue-100 focus:outline-none transition" 
 			/>
 			{/* Mostriamo quante ricette sono state trovate */}
 			<p className="mt-2 font-semibold">
@@ -52,13 +53,13 @@ const SearchInput = () => {
 				filteredRecipes.map((recipe) => (
 					<div
 						key={recipe.id || recipe.name}
-						className="max-w-sm w-full lg:max-w-full lg:flex mb-4 border rounded-lg overflow-hidden mt-9"
+						className="max-w-lg w-full border rounded-lg overflow-hidden mt-9 p-6 flex justify-center items-center shadow-lg"
 					>
 						<div className="h-48 lg:h-auto lg:w-48 flex-none bg-cover text-center overflow-hidden">
 							<img
 								src={recipe.image}
 								alt={recipe.name}
-								className="w-full h-full object-cover"
+								className="w-full h-full rounded-lg object-cover"
 							/>
 						</div>
 						<div className="p-4 flex flex-col justify-between">
