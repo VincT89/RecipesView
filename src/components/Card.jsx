@@ -1,21 +1,44 @@
-import React from "react";
-import Button from "./Button";
+import React from 'react';
 
-export const Card = ({ image, name, description }) => {
+
+const Card = ({ recipe, isExpanded, onToggle }) => {
   return (
-    <article className="group bg-white border border-gray-200 rounded-xl overflow-hidden shadow-sm hover:shadow-md hover:-translate-y-0.5 transition-all">
-      <div className="relative aspect-[4/3] overflow-hidden">
-        <img
-          src={image}
-          alt={name}
-          className="absolute inset-0 w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-        />
+    <div className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col">
+      <img
+        src={recipe.image}
+        alt={recipe.name}
+        className="w-full h-[200px] object-cover transition-transform duration-300 ease-in-out hover:scale-105"
+      />
+      <div className="p-4">
+        <h3 className="text-lg font-semibold">{recipe.name}</h3>
+        <p className="mt-1"><strong>Cucina:</strong> {recipe.cuisine}</p>
+        <button
+          onClick={() => onToggle(recipe.id)}
+          className="mt-2 px-4 py-2 rounded text-white border-none cursor-pointer font-bold "
+          style={{
+            backgroundColor: 'var(--color-button-500)'
+          }}
+          onMouseOver={e => {
+            e.currentTarget.style.backgroundColor = 'var(--color-buttonHover-800)';
+            e.currentTarget.style.color = 'var(--color-buttonTextHover-600)';
+          }}
+          onMouseOut={e => {
+            e.currentTarget.style.backgroundColor = 'var(--color-button-500)';
+            e.currentTarget.style.color = 'white';
+          }}
+        >
+          {isExpanded ? 'Nascondi ingredienti' : 'Mostra ingredienti'}
+        </button>
+        {isExpanded && (
+          <ul className="mt-4 pl-5 list-disc">
+            {recipe.ingredients.map((ing, i) => (
+              <li key={i}>{ing}</li>
+            ))}
+          </ul>
+        )}
       </div>
-      <div className="p-4 text-center flex flex-col items-center">
-        <h3 className="text-base font-semibold mb-1">{name}</h3>
-        <p className="text-sm text-gray-600 mb-3">{description}</p>
-        <Button className="w-40 px-3 py-1.5 text-sm rounded-lg">Dettagli</Button>
-      </div>
-    </article>
+    </div>
   );
 };
+
+export default Card;
