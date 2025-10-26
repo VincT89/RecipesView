@@ -1,14 +1,11 @@
 import { createSlice } from '@reduxjs/toolkit';
 
-// Stato iniziale
-const initialState = {
-  user: null, // Contiene i dettagli dell'utente (es. username, email, etc.)
-};
-
 // Creiamo il slice per il profilo utente
 const profileSlice = createSlice({
   name: 'profile',
-  initialState,
+  initialState: {
+    user: null,
+  },
   reducers: {
     // Aggiungiamo un'azione per settare i dati dell'utente
     setUserProfile: (state, action) => {

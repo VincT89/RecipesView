@@ -51,7 +51,7 @@ const Navbar = () => {
 								Le Ricette
 							</Link>
 							<Link
-								to="/dashboard/profilo"
+								to="/dashboardProfilo"
 								className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
 							>
 								Profilo
