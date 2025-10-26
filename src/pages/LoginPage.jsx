@@ -44,7 +44,7 @@ const LoginPage = () => {
             const { accessToken, refreshToken, ...user } = data;
 
             dispatch(login({ user, accessToken }));
-            navigate("/dashboardProfilo");
+            navigate("/dashboard/profilo");
 
         } catch (error) {
             console.log(error)

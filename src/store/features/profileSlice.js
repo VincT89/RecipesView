@@ -1,24 +1,32 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
-// Creiamo il slice per il profilo utente
+// Stato iniziale del profilo utente come un oggetto
+const initialState = {
+	user: {
+		firstName: "",
+		lastName: "",
+		maidenName: "",
+		age: "",
+		gender: "",
+		email: "",
+		image: "",
+	},
+};
+
 const profileSlice = createSlice({
-  name: 'profile',
-  initialState: {
-    user: null,
-  },
-  reducers: {
-    // Aggiungiamo un'azione per settare i dati dell'utente
-    setUserProfile: (state, action) => {
-      state.user = action.payload; // Aggiorna i dettagli dell'utente con i dati ricevuti
+	name: "profile",
+	initialState,
+	reducers: {
+		setProfile: (state, action) => {
+			// Aggiorniamo lo stato del profilo con i dati ricevuti
+			state.user = action.payload;
     },
-    clearUserProfile: (state) => {
-      state.user = null; // Pulisce i dettagli dell'utente
-    },
-  },
+		clearProfile: (state) => {
+			// Resettiamo lo stato del profilo all'iniziale
+			state.user = initialState.user;
+		},
+	},
 });
 
-// Esportiamo le azioni
-export const { setUserProfile, clearUserProfile } = profileSlice.actions;
-
-// Esportiamo il reducer per essere usato nel store
+export const { setProfile, clearProfile } = profileSlice.actions;
 export default profileSlice.reducer;

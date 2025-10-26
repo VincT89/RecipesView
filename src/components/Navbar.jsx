@@ -51,14 +51,14 @@ const Navbar = () => {
 								Le Ricette
 							</Link>
 							<Link
-								to="/dashboardProfilo"
+								to="/dashboard/profilo"
 								className="px-6 py-2 bg-button-500 text-buttonHoverText rounded-full font-bold hover:bg-buttonHover-500"
 							>
 								Profilo
 							</Link>
 							<button
 								onClick={handleLogout}
-								className="px-4 py-2 bg-red-400 text-white rounded-full font-bold hover:bg-red-600"
+								className="px-4 py-2 bg-[#4A5D4B] text-white rounded-full font-bold hover:bg-red-600"
 							>
 								Logout
 							</button>
