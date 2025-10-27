@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../store/features/authSlice";
 import navbarCustom from "../hooks/useNavbarCustom";
 import { resetRecipes } from "../store/features/recipesSlice";
+import { clearProfile } from "../store/features/profileSlice";
 
 const Navbar = () => {
 	// Dati utente
@@ -17,6 +18,7 @@ const Navbar = () => {
 	const handleLogout = () => {
 		dispatch(logout());
 		dispatch(resetRecipes());
+		dispatch(clearProfile());
 		navigate("/");
 	};
 
